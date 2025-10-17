@@ -1,7 +1,7 @@
 ---
 - hosts: nokia
   vars:
-    - ansible_network_os: nokia.sros.md
+    ansible_network_os: nokia.sros.md
   vars_prompt:
     - name: ansible_user
       prompt: "Username"
@@ -16,7 +16,7 @@
 
   tasks:
   - name: get device info
-    device_info:
+    nokia.sros.device_info:
     register: device_info
 
   - name: display device info

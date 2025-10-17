@@ -1,10 +1,10 @@
 ---
 - hosts: nokia
   vars:
-    - ansible_network_os: nokia.sros.md
-    - ansible_user: admin
-    - ansible_password: admin
-    - ansible_command_timeout: 30
+    ansible_network_os: nokia.sros.md
+    ansible_user: admin
+    ansible_password: admin
+    ansible_command_timeout: 30
   connection: network_cli
   gather_facts: No
 

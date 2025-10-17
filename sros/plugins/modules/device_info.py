@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # (c) 2019 Nokia
 #
 # Licensed under the BSD 3 Clause license
@@ -13,7 +13,7 @@ short_description: Return device information
 
 EXAMPLES = '''
 - name: get device info
-  device_info:
+  nokia.sros.device_info:
 '''
 
 RETURN = '''
@@ -38,9 +38,16 @@ def main():
     module = AnsibleModule(argument_spec=argument_spec)
     connection = Connection(module._socket_path)
 
-    result = {'changed': False, 'output': connection.get_device_info()}
+    device_info = connection.get_device_info() or {}
+    warnings = device_info.pop('warnings', None)
+    if warnings:
+        if not isinstance(warnings, (list, tuple, set)):
+            warnings = [warnings]
+        for warning in warnings:
+            if warning:
+                module.warn(str(warning))
 
-    module.exit_json(**result)
+    module.exit_json(changed=False, output=device_info)
 
 
 if __name__ == '__main__':
