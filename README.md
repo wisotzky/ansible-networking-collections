@@ -23,6 +23,12 @@ Ansible collections contributed by Nokia are available from: https://galaxy.ansi
 
 The collections in this repository target **ansible-core 2.13** and newer. Ensure your automation host provides a supported Python 3 runtime (Python 3.8 or later is recommended).
 
+Install the Python dependencies required by the Nokia SR OS modules before running the sample playbooks:
+
+```bash
+pip install -r sros/requirements.txt
+```
+
 ## License
 
 This project is licensed under the BSD-3-Clause license - see the [LICENSE](LICENSE).

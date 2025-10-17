@@ -38,9 +38,16 @@ def main():
     module = AnsibleModule(argument_spec=argument_spec)
     connection = Connection(module._socket_path)
 
-    result = {'changed': False, 'output': connection.get_device_info()}
+    device_info = connection.get_device_info() or {}
+    warnings = device_info.pop('warnings', None)
+    if warnings:
+        if not isinstance(warnings, (list, tuple, set)):
+            warnings = [warnings]
+        for warning in warnings:
+            if warning:
+                module.warn(str(warning))
 
-    module.exit_json(**result)
+    module.exit_json(changed=False, output=device_info)
 
 
 if __name__ == '__main__':

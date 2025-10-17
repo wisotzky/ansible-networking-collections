@@ -13,6 +13,12 @@ Make sure you have the Ansible [netcommon](https://galaxy.ansible.com/ansible/ne
 ansible-galaxy collection install ansible.netcommon
 ```
 
+Install the Python dependencies used by this collection to enable NETCONF
+support and SSH optimisations:
+```bash
+pip install -r requirements.txt
+```
+
 To install this collection, please use the following command:
 ```bash
 ansible-galaxy collection install nokia.sros
@@ -29,6 +35,7 @@ To use this collection make sure to set `ansible_network_os=nokia.sros.{mode}` i
 ## Requirements
 * ansible-core 2.13 or newer
 * Python 3.8 or newer on the Ansible control node
+* Python libraries: [ansible-pylibssh](https://pypi.org/project/ansible-pylibssh/), [jxmlease](https://pypi.org/project/jxmlease/), [ncclient](https://pypi.org/project/ncclient/)
 
 ## Supported Nokia SR OS versions
 Tested with SR OS 19.5, 19.7, 19.10 and 20.5
