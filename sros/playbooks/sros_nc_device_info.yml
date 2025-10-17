@@ -16,7 +16,7 @@
 
   tasks:
   - name: get device info
-    device_info:
+    nokia.sros.device_info:
     register: device_info
 
   - name: display device info

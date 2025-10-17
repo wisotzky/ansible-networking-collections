@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # (c) 2019 Nokia
 #
 # Licensed under the BSD 3 Clause license
@@ -13,7 +13,7 @@ short_description: Return device information
 
 EXAMPLES = '''
 - name: get device info
-  device_info:
+  nokia.sros.device_info:
 '''
 
 RETURN = '''

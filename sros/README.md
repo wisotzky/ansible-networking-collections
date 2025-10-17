@@ -3,7 +3,7 @@
 
 ***
 
-This [collection](https://galaxy.ansible.com/nokia/sros) is to provide automation for Nokia SR OS devices using Ansible by RedHat.
+This [collection](https://galaxy.ansible.com/nokia/sros) provides automation for Nokia SR OS devices using Ansible by Red Hat.
 
 ## Installation
 Distribution is via [ansible-galaxy](https://galaxy.ansible.com/).
@@ -27,28 +27,29 @@ ansible-galaxy collection install nokia.sros --force-with-deps
 To use this collection make sure to set `ansible_network_os=nokia.sros.{mode}` in your host inventory.
 
 ## Requirements
-* Ansible 2.9 or newer
+* ansible-core 2.13 or newer
+* Python 3.8 or newer on the Ansible control node
 
 ## Supported Nokia SR OS versions
 Tested with SR OS 19.5, 19.7, 19.10 and 20.5
 
 ## Playbooks
 ### Classic CLI
-* [sros_classic_cli_command_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_classic_cli_command_demo.yml)
-* [sros_classic_cli_config_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_classic_cli_config_demo.yml)
-* [sros_classic_cli_backup_restore_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_classic_cli_backup_restore_demo.yml)
+* [sros_classic_cli_command_demo.yml](playbooks/sros_classic_cli_command_demo.yml)
+* [sros_classic_cli_config_demo.yml](playbooks/sros_classic_cli_config_demo.yml)
+* [sros_classic_cli_backup_restore_demo.yml](playbooks/sros_classic_cli_backup_restore_demo.yml)
 ### MD-CLI
-* [sros_mdcli_command_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_mdcli_command_demo.yml)
-* [sros_mdcli_config_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_mdcli_config_demo.yml)
-* [sros_mdcli_backup_restore_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_mdcli_backup_restore_demo.yml)
+* [sros_mdcli_command_demo.yml](playbooks/sros_mdcli_command_demo.yml)
+* [sros_mdcli_config_demo.yml](playbooks/sros_mdcli_config_demo.yml)
+* [sros_mdcli_backup_restore_demo.yml](playbooks/sros_mdcli_backup_restore_demo.yml)
 ### NETCONF
-* [sros_nc_state_demo.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_nc_state_demo.yml)
+* [sros_nc_state_demo.yml](playbooks/sros_nc_state_demo.yml)
 ### Device information
-* [sros_cli_device_info.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_cli_device_info.yml)
-* [sros_nc_device_info.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_nc_device_info.yml)
+* [sros_cli_device_info.yml](playbooks/sros_cli_device_info.yml)
+* [sros_nc_device_info.yml](playbooks/sros_nc_device_info.yml)
 
 ## Modules
-The Ansible module `device_info` returns information about the networking device connected. This module is designed to work with CLI and NETCONF connections.
+The Ansible module `nokia.sros.device_info` returns information about the networking device connected. This module is designed to work with CLI and NETCONF connections.
 Example result:
 ```yaml
   output:
@@ -85,7 +86,7 @@ For example:
 ```
 
 This Ansible collection also contains a playbook, on how to enable rollbacks:
-[sros_classic_cli_commission.yml](https://raw.githubusercontent.com/nokia/ansible-networking-collections/master/sros/playbooks/sros_classic_cli_commission.yml).
+[sros_classic_cli_commission.yml](playbooks/sros_classic_cli_commission.yml).
 
 Note: Use `nokia.sros.light` for SR OS nodes that don't support rollback or if the use of the
 rollback is not desired.

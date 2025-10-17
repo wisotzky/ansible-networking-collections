@@ -6,6 +6,7 @@ authors:
 - Sven Wisotzky <sven.wisotzky@nokia.com>
 description: Ansible collection to support networking devices running Nokia SR OS
 license: BSD-3-Clause
+requires_ansible: ">=2.13"
 tags:
 - collection
 - network
@@ -21,7 +22,7 @@ tags:
 - terminal
 - ansible
 
-repository: http://github.com/nokia/ansible-networking-collections/blob/master/sros
-documentation: http://github.com/nokia/ansible-networking-collections/blob/master/sros
-homepage: http://github.com/nokia/ansible-networking-collections/blob/master/sros
+repository: https://github.com/nokia/ansible-networking-collections/tree/HEAD/sros
+documentation: https://github.com/nokia/ansible-networking-collections/tree/HEAD/sros
+homepage: https://github.com/nokia/ansible-networking-collections/tree/HEAD/sros
 issues: http://github.com/nokia/ansible-networking-collections/issues
